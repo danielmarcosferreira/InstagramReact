@@ -26,17 +26,25 @@ export default function Stories() {
         
         <div class="stories">
             <Storie image={Gag} texto='9gag'/>
+
             <Storie image={Meowed} texto='meowed'/>
+            
             <Storie image={Barked} texto='barked'/>
+
             <Storie image={Nathanwpylestrangeplanet} texto='nathanwpylestrangeplanet'/>
+
             <Storie image={Wawawicomics} texto='wawawicomics'/>
+
             <Storie image={Respondeai} texto='respondeai'/>
+
             <Storie image={Filomoderna} texto='filomoderna'/>
+            
             <Storie image={Memeriagourmet} texto='memeriagourmet'/>
             
             <div class="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
+
         </div>
     )
 }

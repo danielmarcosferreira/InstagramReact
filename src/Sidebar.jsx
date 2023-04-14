@@ -1,10 +1,11 @@
 import Sugestoes from "./Sugestoes"
+import Catanacomics from './assets/img/catanacomics.svg'
 
 export default function Sidebar() {
     return (
         <div class="sidebar">
             <div class="usuario">
-                <img src="assets/img/catanacomics.svg" />
+                <img src={Catanacomics} />
                 <div class="texto">
                     <strong>catanacomics</strong>
                     <span>

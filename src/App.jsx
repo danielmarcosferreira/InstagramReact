@@ -11,16 +11,21 @@ function App() {
       <Navibar />
 
       <div class="corpo">
+        
         <div class="esquerda">
+          
           <Stories />
 
           <Posts />
+
         </div>
 
         <Sidebar />
+
       </div>
 
       <FundoMobile />
+
     </div>
   )
 }
