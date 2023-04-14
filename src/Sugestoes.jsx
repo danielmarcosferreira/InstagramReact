@@ -21,23 +21,23 @@ function Sugestao(props) {
 }
 
 export default function Sugestoes() {
+    const sugestaoLista = [
+        { ImgIcon: Badvibesmemes, TextoNome: 'bad.vibes.memes', TextoRazao: 'Segue você' },
+        { ImgIcon: Chibirdart, TextoNome: 'chibirdart', TextoRazao: 'Segue você' },
+        { ImgIcon: Razoesparaacreditar, TextoNome: 'razoesparaacreditar', TextoRazao: 'Novo no Instagram' },
+        { ImgIcon: Adorableanimals, TextoNome: 'adorable_animals', TextoRazao: 'Segue você' },
+        { ImgIcon: Smallcutecats, TextoNome: 'smallcutecats', TextoRazao: 'Segue você' }
+    ]
+
     return (
         <div class="sugestoes">
-            
+
             <div class="titulo">
                 Sugestões para você
                 <div>Ver tudo</div>
             </div>
 
-            <Sugestao ImgIcon={Badvibesmemes} TextoNome='bad.vibes.memes' TextoRazao='Segue você'/>
-
-            <Sugestao ImgIcon={Chibirdart} TextoNome='chibirdart' TextoRazao='Segue você'/>
-
-            <Sugestao ImgIcon={Razoesparaacreditar} TextoNome='razoesparaacreditar' TextoRazao='Novo no Instagram'/>
-
-            <Sugestao ImgIcon={Adorableanimals} TextoNome='adorable_animals' TextoRazao='Segue você'/>
-
-            <Sugestao ImgIcon={Smallcutecats} TextoNome='smallcutecats' TextoRazao='Segue você'/>
+            {sugestaoLista.map((i) => <Sugestao ImgIcon={i.ImgIcon} TextoNome={i.TextoNome} TextoRazao={i.TextoRazao} />)}
 
         </div>
     )

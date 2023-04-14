@@ -1,6 +1,19 @@
 import Logo from "./assets/img/logo.png"
 
+function Icons(props) {
+    return (
+        <ion-icon name={props.icon}></ion-icon>
+    )
+}
+
 export default function Navibar() {
+    const icone = [
+        { icon: "paper-plane-outline" },
+        { icon: "compass-outline" },
+        { icon: "heart-outline" },
+        { icon: "person-outline" }
+    ]
+
     return (
         <div class="navbar">
             <div class="container">
@@ -23,10 +36,13 @@ export default function Navibar() {
                 </div>
 
                 <div class="icones">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
+                    {icone.map((i) => <Icons icon={i.icon} />)}
+
+                    {/* <ion-icon name="paper-plane-outline"></ion-icon>   // OUTRA FORMA DE FAZER !!!!
                     <ion-icon name="compass-outline"></ion-icon>
                     <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="person-outline"></ion-icon>
+                    <ion-icon name="person-outline"></ion-icon> */}
+
                 </div>
 
                 <div class="icones-mobile">

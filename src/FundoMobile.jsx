@@ -1,11 +1,22 @@
+function ExibeIcone(props) {
+    return (
+        <ion-icon name={props.name}></ion-icon>
+    )
+}
+
 export default function FundoMobile() {
+    const iconsMobile = [
+        { nome: "home" },
+        { nome: "search-outline" },
+        { nome: "add-circle-outline" },
+        { nome: "heart-outline" },
+        { nome: "person-outline" }
+    ]
+
     return (
         <div class="fundo-mobile">
-            <ion-icon name="home"></ion-icon>
-            <ion-icon name="search-outline"></ion-icon>
-            <ion-icon name="add-circle-outline"></ion-icon>
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="person-outline"></ion-icon>
+
+            {iconsMobile.map((i) => <ExibeIcone name={i.nome} />)}
         </div>
     )
 }

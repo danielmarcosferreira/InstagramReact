@@ -11,9 +11,9 @@ function App() {
       <Navibar />
 
       <div class="corpo">
-        
+
         <div class="esquerda">
-          
+
           <Stories />
 
           <Posts />
