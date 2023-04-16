@@ -8,33 +8,44 @@ import Adorableanimals from './assets/img/adorable_animals.svg'
 
 export default function Posts() {
     const [like, setLike] = React.useState('heart-outline')
-    const [salvo, setSalvo] = React.useState('bookmark-outline')
-
-    function salvarPost() {
-        const salvoClicado = 'bookmark'
-        setSalvo(salvoClicado)
-    }
+    const [foiSalvo, setFoiSalvo] = React.useState(true)
 
     function deuLike() {
         const likeClicado = 'heart'
         setLike(likeClicado)
     }
 
+    function mudaSalvo() {
+        setFoiSalvo(!foiSalvo)
+    }
+
     function Post(props) {
+        const {
+            imgIcon,
+                textIcon,
+                imgPost,
+                imgCurtidas,
+                curtidasPagina,
+                curtidas,
+                isSaved,
+                isLiked
+        } = props
+
+
         return (
             <div class="post">
                 <div class="topo">
                     <div class="usuario">
-                        <img src={props.imgIcon} />
-                        {props.textIcon}
+                        <img src={imgIcon} />
+                        {textIcon}
                     </div>
                     <div class="acoes">
                         <ion-icon name="ellipsis-horizontal"></ion-icon>
                     </div>
                 </div>
 
-                <div class="conteudo">
-                    <img src={props.imgPost} />
+                <div onClick={deuLike} class="conteudo">
+                    <img src={imgPost} />
                 </div>
 
                 <div class="fundo">
@@ -45,14 +56,19 @@ export default function Posts() {
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
                         <div>
-                            <ion-icon name={salvo} onClick={salvarPost}></ion-icon>
+                            {foiSalvo ? (
+                                <ion-icon onClick={mudaSalvo} name="bookmark-outline"></ion-icon>
+                            ) : (
+                                <ion-icon onClick={mudaSalvo} name="bookmark"></ion-icon>
+                            )}
+
                         </div>
                     </div>
 
                     <div class="curtidas">
-                        <img src={props.imgCurtidas} />
+                        <img src={imgCurtidas} />
                         <div class="texto">
-                            Curtido por <strong>{props.curtidasPagina}</strong> e <strong>outras {props.curtidas} pessoas</strong>
+                            Curtido por <strong>{curtidasPagina}</strong> e <strong>outras {curtidas} pessoas</strong>
                         </div>
                     </div>
                 </div>
@@ -67,7 +83,9 @@ export default function Posts() {
             imgPost: Gatotelefone,
             imgCurtidas: Respondeai,
             curtidasPagina: 'respondeai',
-            curtidas: '101523'
+            curtidas: '101523',
+            isSaved: (false),
+            isLiked: true
         },
         {
             imgIcon: Barked,
@@ -75,7 +93,9 @@ export default function Posts() {
             imgPost: Dog,
             imgCurtidas: Adorableanimals,
             curtidasPagina: 'adorable_animals',
-            curtidas: '99159'
+            curtidas: '99159',
+            isSaved: (true),
+            isLiked: false
         }
     ]
 
@@ -89,6 +109,8 @@ export default function Posts() {
                     imgCurtidas={i.imgCurtidas}
                     curtidasPagina={i.curtidasPagina}
                     curtidas={i.curtidas}
+                    isSaved={i.isSaved}
+                    isLiked={i.isLiked}
                 />)}
         </div>
     )

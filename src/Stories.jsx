@@ -14,7 +14,7 @@ function Story(props) {
                 <img src={props.image} />
             </div>
             <div class="usuario">
-                {props.texto}
+                {props.text}
             </div>
         </div>
     )
@@ -22,19 +22,19 @@ function Story(props) {
 
 export default function Stories() {
     const storiesLista = [
-        { image: Gag, texto: '9gag' },
-        { image: Meowed, texto: 'meowed' },
-        { image: Barked, texto: 'barked' },
-        { image: Nathanwpylestrangeplanet, texto: 'nathanwpylestrangeplanet' },
-        { image: Wawawicomics, texto: 'wawawicomics' },
-        { image: Respondeai, texto: 'respondeai' },
-        { image: Filomoderna, texto: 'filomoderna' },
-        { image: Memeriagourmet, texto: 'memeriagourmet' }
+        { image: Gag, text: '9gag' },
+        { image: Meowed, text: 'meowed' },
+        { image: Barked, text: 'barked' },
+        { image: Nathanwpylestrangeplanet, text: 'nathanwpylestrangeplanet' },
+        { image: Wawawicomics, text: 'wawawicomics' },
+        { image: Respondeai, text: 'respondeai' },
+        { image: Filomoderna, text: 'filomoderna' },
+        { image: Memeriagourmet, text: 'memeriagourmet' }
     ]
 
     return (
         <div class="stories">
-            {storiesLista.map((i) => <Story image={i.image} texto={i.texto} />)}
+            {storiesLista.map((i) => <Story image={i.image} text={i.text} />)}
 
             <div class="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>

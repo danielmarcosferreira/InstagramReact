@@ -38,11 +38,6 @@ export default function Navibar() {
                 <div class="icones">
                     {icone.map((i) => <Icons icon={i.icon} />)}
 
-                    {/* <ion-icon name="paper-plane-outline"></ion-icon>   // OUTRA FORMA DE FAZER !!!!
-                    <ion-icon name="compass-outline"></ion-icon>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="person-outline"></ion-icon> */}
-
                 </div>
 
                 <div class="icones-mobile">
